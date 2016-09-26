@@ -1,0 +1,19 @@
+@import "susy";
+@import "compass";
+
+$susy: (
+  columns: 12,  //количество колонок
+  container: 100%,
+  container-position: center,
+  //column-width: 4em,
+  gutters: 1/4, //отступы между колонками
+  gutter-position: after, // inside | before | split местонахождение отступов от колонок
+  match: fluid, // static фукнция деления статическая в пикселях или в процентах
+  output: float, // isolate обтекание блоков
+  debug: (
+	image : show, // | hide
+	color: rgba(black,.2),
+	output: overlay, // |background
+	toggle: top right,
+  	)
+);

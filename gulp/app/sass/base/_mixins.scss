@@ -1,0 +1,74 @@
+// подложка //
+@mixin backboard{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+// подложка //
+@mixin fixboard{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%
+}
+@mixin filter($i){
+	filter : $i;
+	-webkit-filter : $i;
+	-moz-filter : $i;
+	-ms-filter: $i;
+	-o-filter : $i;
+}
+//имитация блока//
+@mixin display ($i){
+	display: $i;
+	-webkit-display: $i;
+	-moz-display: $i;
+	-ms-display: $i;
+	-o-display: $i;
+}
+//направление оси//
+@mixin flex-direction($i){
+	flex-direction: $i;
+	-webkit-flex-direction: $i;
+	-moz-flex-direction: $i;
+	-o-flex-direction: $i;
+}
+//перенос//
+@mixin flex-wrap($i){
+	flex-wrap: $i;
+	-webkit-flex-wrap: $i;
+	-moz-flex-wrap: $i;
+	-o-flex-wrap: $i;
+}
+//направление и перенос//
+@mixin flex-flow($i, $j){
+	flex-flow: $i $j;
+	-webkit-flex-flow: $i $j;
+	-moz-flex-flow: $i $j;
+	-o-flex-flow: $i $j;
+}
+//выравниание контента//
+@mixin justify-content($i){
+	justify-content: $i;
+	-webkit-justify-content: $i;
+	-moz-justify-content: $i;
+	-o-justify-content: $i;
+}
+//относительное выравнивание к друг другу//
+@mixin align-items($i){
+	align-items: $i;
+	-webkit-align-items: $i;
+	-moz-align-items: $i;
+	-o-align-items: $i;
+}
+//относительное выравнивание к родителю//
+@mixin align-content($i){
+	align-content: $i;
+	-webkit-align-content: $i;
+	-moz-align-content: $i;
+	-o-align-content: $i;
+}
