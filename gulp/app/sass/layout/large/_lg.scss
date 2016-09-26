@@ -1,0 +1,9 @@
+.wrapper{
+	@include container(show);
+	//@include full;
+}
+@media screen and(min-width: 1070px){
+	p.test{
+		font-size: 200px;
+	}
+}
