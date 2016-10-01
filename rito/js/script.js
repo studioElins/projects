@@ -134,7 +134,7 @@ $( document ).ready(function() {
 			animateIn: 'fadeIn',
 			nav: false,
 			dots: true,
-			onTranslated: function() {$('.pi-slider').find('.imagefill').imagecover()}
+			//onTranslated: function() {$('.pi-slider').find('.imagefill').imagecover()}
 		});
 	}
 

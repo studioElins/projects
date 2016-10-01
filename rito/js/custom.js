@@ -1,24 +1,24 @@
 $(document).ready(function(){
 	count()
 	tovar()
-	$(".si-color.product ").bind("load click", function(){
-		sizeActive();
+	sizeActive();
+	$(".si-color.product ").bind("click", function(){
+		//sizeActive();
 		toggleClass($(this))
 	})
 	function toggleClass(elem){
 		elem.siblings().removeClass('active');
 		elem.addClass('active');
-
 		dataAjax(elem)
 		function dataAjax(product){
 			$.getJSON('data.json', function (data){
 				$.each(data, function(key, val){
 					if(product.attr("data-attr") === key){
+						$("img.zoomImg").attr("src",val.photo)
 						$(".item span").text(val.color);
 						if( val.size === " " || val.size == "undefined" || val.size ===  false ){
 							$('.pd-text .item.size').text("size empty :c ");
 							$(".pd-size .pd-size-item").hide();
-							$(".pd-size-item.size.active").attr("data-color" , false) 
 						}else{
 							$(".si-color.product.active").attr("data-color" , val.color) 
 							$('.pd-text .item.size').text("Размер:");
@@ -40,18 +40,14 @@ $(document).ready(function(){
 	}
 })
 function sizeActive(){
-	$(".pd-size-item").bind("click load", function(){
-		$(".pd-size-item.size").removeClass('active');
+	$(".pd-size-item").bind("click", function(){
+		$(".pd-size-item.size, .pd-size-item").removeClass('active');
 		$(this).addClass('active');
 		tovar()
 	})
 }
 function count(){
-	var add = $("a.plus");
-	var min = $("a.minus");
-	var val = $("input.input.count");
-	var prc = $("div.price");
-	var cnt = 1;
+	var add = $("a.plus"), min = $("a.minus"), val = $("input.input.count"), prc = $("div.price"), cnt = 1;
 	add.click(function(){
 		cnt++
 		val.val(cnt);

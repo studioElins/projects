@@ -1,22 +1,23 @@
 {
 	"product-1" : {
-		"photo" : "images/green.png",
+		
 		"size" : [ "s", "m", "l"], 
-		"color" : "green"
+		"color" : "green",
+		"photo" : "images/green.jpg"
 	},
 	"product-2" : {
-		"photo" : "images/blue .png",
 		"size" : [ "xxl", "xl", "l"],
-		"color" : "orange"
+		"color" : "orange",
+		"photo" : "images/orange.jpg"
 	},
 	"product-3" : {
-		"photo" : "images/green.png",
 		"size" : [ "l", "xl", "s"], 
-		"color" : "red"
+		"color" : "red",
+		"photo" : "images/red.jpg"
 	},
 	"product-4" : {
-		"photo" : "images/blue.png",
 		"size" : " ", 
-		"color" : "gray"
+		"color" : "gray",
+		"photo" : "images/grey.jpg"
 	}
 }
