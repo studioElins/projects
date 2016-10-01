@@ -1,27 +1,26 @@
 $(document).ready(function(){
 	count()
 	tovar()
-	$(".si-color.product ").bind("click", function(){
+	$(".si-color.product ").bind("load click", function(){
 		sizeActive();
 		toggleClass($(this))
 	})
-	sizeActive();
 	function toggleClass(elem){
 		elem.siblings().removeClass('active');
 		elem.addClass('active');
+
 		dataAjax(elem)
 		function dataAjax(product){
 			$.getJSON('data.json', function (data){
 				$.each(data, function(key, val){
 					if(product.attr("data-attr") === key){
 						$(".item span").text(val.color);
-						$(".si-color.product.active").attr("data-color" , val.color) 
-						
 						if( val.size === " " || val.size == "undefined" || val.size ===  false ){
 							$('.pd-text .item.size').text("size empty :c ");
 							$(".pd-size .pd-size-item").hide();
-							$(".si-color.product.active").attr("data-color" , false) 
+							$(".pd-size-item.size.active").attr("data-color" , false) 
 						}else{
+							$(".si-color.product.active").attr("data-color" , val.color) 
 							$('.pd-text .item.size').text("Размер:");
 							$(".pd-size .pd-size-item").show();
 							var parItem = "<div class='pd-size-contain'>"
@@ -32,6 +31,7 @@ $(document).ready(function(){
 							$(".pd-size").html(parItem)
 							sizeActive();
 						}
+						$(".pd-size-item.size").first().addClass('active')
 						tovar()
 					}
 				})
@@ -40,8 +40,7 @@ $(document).ready(function(){
 	}
 })
 function sizeActive(){
-	$(".pd-size-item").bind("click", function(){
-		$(".pd-size-item.size").eq(0).addClass('active');
+	$(".pd-size-item").bind("click load", function(){
 		$(".pd-size-item.size").removeClass('active');
 		$(this).addClass('active');
 		tovar()
@@ -68,10 +67,10 @@ function count(){
 	})	
 }
 function tovar(){
-
-		$("input.zakaz").val(
-			$("input.input.count").val() + " / " +
-			$(".pd-size-item.size.active").text() + " / " +
-			$(".si-color.product.active").attr("data-color") 
-		)
+	$("input.zakaz").val(
+		$("input.input.count").val() + " / " +
+		$(".pd-size-item.size.active").text() + " / " +
+		$(".si-color.product.active").attr("data-color") 
+	);
 }
+
