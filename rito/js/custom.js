@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	count()
+	tovar()
 	$(".si-color.product ").bind("click", function(){
 		sizeActive();
 		toggleClass($(this))
