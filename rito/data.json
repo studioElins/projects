@@ -1,13 +1,12 @@
 {
 	"product-1" : {
-		
 		"size" : [ "s", "m", "l"], 
 		"color" : "green",
 		"photo" : "images/green.jpg"
 	},
 	"product-2" : {
-		"size" : [ "xxl", "xl", "l"],
-		"color" : "orange",
+		"size" : [ "S", "M", "l"],
+		"color" : "Беж. Меланш",
 		"photo" : "images/orange.jpg"
 	},
 	"product-3" : {

@@ -3,7 +3,6 @@ $(document).ready(function(){
 	tovar()
 	sizeActive();
 	$(".si-color.product ").bind("click", function(){
-		//sizeActive();
 		toggleClass($(this))
 	})
 	function toggleClass(elem){
@@ -16,11 +15,12 @@ $(document).ready(function(){
 					if(product.attr("data-attr") === key){
 						$("img.zoomImg").attr("src",val.photo)
 						$(".item span").text(val.color);
+						$(".si-color.product.active").attr("data-color" , val.color) 
 						if( val.size === " " || val.size == "undefined" || val.size ===  false ){
 							$('.pd-text .item.size').text("size empty :c ");
 							$(".pd-size .pd-size-item").hide();
-						}else{
-							$(".si-color.product.active").attr("data-color" , val.color) 
+							$(".pd-size-item.size.active, .pd-size-item.size").text(" ");
+						}else{	
 							$('.pd-text .item.size').text("Размер:");
 							$(".pd-size .pd-size-item").show();
 							var parItem = "<div class='pd-size-contain'>"
