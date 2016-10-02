@@ -1,22 +1,42 @@
 {
 	"product-1" : {
 		"size" : [ "s", "m", "l"], 
-		"color" : "green",
+		"color" : 
+			{
+				"title": "green",
+				"left" : "green",
+				"right" : "grey"
+			},
 		"photo" : "images/green.jpg"
 	},
 	"product-2" : {
-		"size" : [ "S", "M", "l"],
-		"color" : "Беж. Меланш",
+		"size" : [ "xl", "xxl", "l"],
+		"color" : 
+			{
+				"title": "red",
+				"left" : "orange",
+				"right" : "grey"
+			},
 		"photo" : "images/orange.jpg"
 	},
 	"product-3" : {
 		"size" : [ "l", "xl", "s"], 
-		"color" : "red",
+		"color" : 
+			{
+				"title": "red",
+				"left" : "red",
+				"right" : "grey"
+			},
 		"photo" : "images/red.jpg"
 	},
 	"product-4" : {
-		"size" : " ", 
-		"color" : "gray",
+		"size" : [ "xxx", "xl", "s"], 
+		"color" : 
+			{
+				"title": "grey",
+				"left" : "#eaeaea",
+				"right" : "grey"
+			},
 		"photo" : "images/grey.jpg"
 	}
 }
