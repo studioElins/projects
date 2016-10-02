@@ -13,6 +13,8 @@ $(document).ready(function(){
 			$.getJSON('data.json', function (data){
 				$.each(data, function(key, val){
 					if(product.attr("data-attr") === key){
+						$(".owl-dot").css("background-image", "url("+val.photo+")");
+						$(".owl-item.cloned").css("background-image", "url("+val.photo+")");
 						$("img.zoomImg").attr("src",val.photo)
 						$(".item span").text(val.color);
 						$(".si-color.product.active").attr("data-color" , val.color) 

@@ -126,18 +126,19 @@ $( document ).ready(function() {
 
 
 
-	if($('.pi-slider').length > 0){
-		$('.pi-slider').owlCarousel({
-			loop:true,
-			items:1,
-			animateOut: 'fadeOut',
-			animateIn: 'fadeIn',
-			nav: false,
-			dots: true,
-			//onTranslated: function() {$('.pi-slider').find('.imagefill').imagecover()}
-		});
-	}
-
+	//if($('.pi-slider').length > 0){
+	//	$('.pi-slider').owlCarousel({
+	//		loop:true,
+	//		items:1,
+	//		animateOut: 'fadeOut',
+	//		animateIn: 'fadeIn',
+	//		nav: false,
+	//		dots: true,
+	//		itemsScaleUp:true,
+	//		onTranslated: function() {$('.pi-slider').find('.imagefill').imagecover()}
+	//	});
+	//}
+	//
 	if($('.pd-image-slider').length > 0){
 		$('.pd-image-slider').each(function(){
 			var owl = $(this)
@@ -148,7 +149,7 @@ $( document ).ready(function() {
 			}
 			owl.owlCarousel({
 				loop:true,
-				items:1,
+				items:r_i,
 				nav: false,
 				//dots: true,
 				dotsEach: true,
@@ -156,7 +157,7 @@ $( document ).ready(function() {
 				//autoplay: true,
 				//autoplayTimeout: 5000,
 				autoplayHoverPause: true,
-				responsiveBaseElement: owl.parent(),
+				//responsiveBaseElement: owl.parent(),
 				responsive:{
 					0:{
 						items:1
@@ -168,7 +169,6 @@ $( document ).ready(function() {
 				onTranslated: function() {
 					owl.find('.imagefill').imagecover();
 					owl.find('.owl-dot').each(function() {
-				
 						grab = jQuery(this).data('info');
 						console.log(grab);
 						if(jQuery('.slidenumber'+ grab).hasClass('active')) {
@@ -192,7 +192,12 @@ $( document ).ready(function() {
 
 
 			slidecount = 1;
-
+			var path_image = $('.owl-dot').prop("style")
+			if(path_image[1] === "background-image"){
+				console.log(path_image)
+			}
+			
+						//$('.owl-item').css("background-image",)
 			owl.find('.owl-item').not('.cloned').each(function() {
 				jQuery( this ).addClass( 'slidenumber' + slidecount);
 				slidecount=slidecount+1;
@@ -202,7 +207,6 @@ $( document ).ready(function() {
 			owl.find('.owl-dot').each(function() {
 				
 				grab = jQuery(this).data('info');
-
 				slidegrab = jQuery('.slidenumber'+ grab +' img').attr('src');
 				console.log(slidegrab);
 
